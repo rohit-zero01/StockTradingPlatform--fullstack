@@ -16,3 +16,20 @@ applications:
       cache:
         paths:
           - node_modules/**/*
+
+  - appRoot: dashboard
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm install
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: build
+        files:
+          - "**/*"
+      cache:
+        paths:
+          - node_modules/**/*
