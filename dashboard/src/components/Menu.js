@@ -18,7 +18,7 @@ const Menu = () => {
     localStorage.removeItem("token");
 
     // Redirect to frontend landing page
-    window.location.href = "http://localhost:3000/";
+    window.location.href = "/login";
   };
 
   const menuClass = "menu";
