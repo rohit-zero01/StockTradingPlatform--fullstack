@@ -27,7 +27,7 @@ const Home = () => {
 
     if (!token) {
       // Not logged in → go to frontend login
-      window.location.href = "/login";
+      window.location.href = "https://main.d1pxry1t6dirmh.amplifyapp.com/login";
       return;
     }
 
