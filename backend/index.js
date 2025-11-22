@@ -13,7 +13,7 @@ const { HoldingsModel } = require("./model/HoldingsModel");
 const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3000;
 const uri = process.env.MONGO_URL;
 
 const app = express();
@@ -22,7 +22,12 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 
-const JWT_SECRET = "mysecret";
+const JWT_SECRET = process.env.JWT_SECRET;
+
+mongoose
+  .connect(uri)
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log("Mongo Error:", err));
 
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [
@@ -266,7 +271,5 @@ app.post("/newOrder", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log("App Started");
-  mongoose.connect(uri);
-  console.log("DB connected");
+  console.log("App is listining to", PORT);
 });
