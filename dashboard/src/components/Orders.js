@@ -5,9 +5,12 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_BACKEND_URL}/allOrders`).then((res) => {
-      setOrders(res.data);
-    });
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/allOrders`)
+      .then((res) => {
+        setOrders(res.data);
+      })
+      .catch((err) => console.error(err));
   }, []);
 
   if (orders.length === 0) {
