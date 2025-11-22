@@ -10,7 +10,7 @@ function Signup() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3002/signup", {
+      .post("https://stocktradingplatform-fullstack.onrender.com/signup", {
         username,
         email,
         password,
