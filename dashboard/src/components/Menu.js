@@ -18,7 +18,7 @@ const Menu = () => {
     localStorage.removeItem("token");
 
     // Redirect to frontend landing page
-    window.location.href = "https://main.d1pxry1t6dirmh.amplifyapp.com/login";
+    window.location.href = "https://main.d2wao8t0irsjap.amplifyapp.com/login";
   };
 
   const menuClass = "menu";
