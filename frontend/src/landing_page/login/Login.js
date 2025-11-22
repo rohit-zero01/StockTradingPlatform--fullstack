@@ -9,7 +9,7 @@ function Login() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3002/login", {
+      .post("https://stocktradingplatform-fullstack.onrender.com/login", {
         username,
         password,
       })
@@ -18,7 +18,7 @@ function Login() {
         localStorage.setItem("token", res.data.token);
 
         // redirect to dashboard
-        window.location.href = `http://localhost:3001/?token=${encodeURIComponent(
+        window.location.href = `https://main.d1pxry1t6dirmh.amplifyapp.com/?token=${encodeURIComponent(
           res.data.token
         )}`;
       })
